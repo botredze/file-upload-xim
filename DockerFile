@@ -1,0 +1,17 @@
+FROM node:14
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+COPY db_init.sql .
+
+EXPOSE 3000
+
+RUN apt-get update && apt-get install -y mysql-client
+RUN service mysql start && mysql -u root -ppassword -h localhost < db_init.sql
+
+CMD ["node", "server.js"]

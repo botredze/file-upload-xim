@@ -1,0 +1,19 @@
+Update OS sudo apt-get update sudo apt-get upgrade sudo apt-get dist-upgrade sudo apt autoremove sudo apt install -f
+
+Install git sudo apt install git
+
+create file .env on example
+
+Install NVM curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash 
+nvm install 20.10.0
+nvm use v20.10.0 
+
+Docker https://docs.docker.com/engine/install/ubuntu/
+
+curl -fsSL https://get.docker.com -o get-docker.sh sh get-docker.sh dockerd-rootless-setuptool.sh 
+i
+nstall sudo chown $USER /var/run/docker.sock
+
+sudo systemctl restart docker
+
+RUN application docker-compose up -d
